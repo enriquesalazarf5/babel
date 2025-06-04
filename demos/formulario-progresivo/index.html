@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario Progresivo - Perfil de la Morra</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Perfil de la Morra</h1>
+    <div id="progress">
+      <div id="progress-bar"></div>
+    </div>
+    <form id="formulario">
+      <!-- 1 Inicio -->
+      <section class="step" data-step="1">
+        <h2>1. El Dato Básico</h2>
+        <label>Nombre o apodo de la morra
+          <input type="text" name="nombre" required />
+        </label>
+        <label>Edad aproximada
+          <input type="number" name="edad" min="1" />
+        </label>
+        <label>Ciudad / país
+          <input type="text" name="ciudad" />
+        </label>
+        <label>Estado civil
+          <select name="estadoCivil">
+            <option>Soltera</option>
+            <option>Con novio</option>
+            <option>Casada</option>
+            <option>No sabe/no responde</option>
+          </select>
+        </label>
+        <label>Ocupación o estudios
+          <input type="text" name="ocupacion" />
+        </label>
+        <fieldset>
+          <legend>Redes sociales activas</legend>
+          <label><input type="checkbox" name="redes" value="Instagram" />Instagram</label>
+          <label><input type="checkbox" name="redes" value="TikTok" />TikTok</label>
+          <label><input type="checkbox" name="redes" value="WhatsApp" />WhatsApp</label>
+          <label><input type="checkbox" name="redes" value="Otra" />Otra</label>
+        </fieldset>
+        <button type="button" class="next">Siguiente ➡️</button>
+      </section>
+      <!-- 2 Conexión -->
+      <section class="step" data-step="2">
+        <h2>2. ¿Cómo la conociste?</h2>
+        <label>¿Dónde la conociste?
+          <select name="conociste">
+            <option value="persona">En persona</option>
+            <option value="tinder">Tinder</option>
+            <option value="instagram">Instagram</option>
+            <option value="otra">Otra</option>
+          </select>
+        </label>
+        <label>¿Quién dio el primer paso?
+          <select name="primerPaso">
+            <option value="yo">Yo</option>
+            <option value="ella">Ella</option>
+            <option value="mutuo">Fue mutuo</option>
+          </select>
+        </label>
+        <label>¿Cuánto tiempo llevan conociéndose?
+          <input type="text" name="tiempoConocer" />
+        </label>
+        <label>Frecuencia de contacto
+          <select name="frecuencia">
+            <option value="diaria">Diaria</option>
+            <option value="varias">Varias veces por semana</option>
+            <option value="ocasional">Ocasional</option>
+            <option value="nada">Casi nada</option>
+          </select>
+        </label>
+        <button type="button" class="next">Siguiente ➡️</button>
+      </section>
+      <!-- 3 Interacción -->
+      <section class="step" data-step="3">
+        <h2>3. ¿Cómo se llevan?</h2>
+        <label>¿Quién suele escribir primero?
+          <select name="escribePrimero">
+            <option value="yo">Yo</option>
+            <option value="ella">Ella</option>
+            <option value="depende">Depende</option>
+          </select>
+        </label>
+        <label>¿Quién propone los planes?
+          <select name="proponePlanes">
+            <option value="yo">Yo</option>
+            <option value="ella">Ella</option>
+            <option value="ambos">Ambos</option>
+          </select>
+        </label>
+        <label>¿Qué tan rápido responde a tus mensajes?
+          <select name="respuestaRapida" data-score="1">
+            <option value="rapido" data-score="1">Rápido</option>
+            <option value="lento" data-score="0">Lento</option>
+            <option value="depende" data-score="0">Depende</option>
+            <option value="ignora" data-score="-1">A veces ignora</option>
+          </select>
+        </label>
+        <label>¿Te ha cancelado planes sin justificación?
+          <select name="cancelaPlanes">
+            <option value="no" data-score="1">No</option>
+            <option value="si" data-score="-2">Sí</option>
+            <option value="algunas" data-score="-1">Algunas veces</option>
+          </select>
+        </label>
+        <label>¿Te da excusas vagas?
+          <select name="excusas">
+            <option value="no" data-score="1">No</option>
+            <option value="si" data-score="-1">Sí</option>
+            <option value="nose" data-score="0">No sé</option>
+          </select>
+        </label>
+        <button type="button" class="next">Siguiente ➡️</button>
+      </section>
+      <!-- 4 Interés emocional -->
+      <section class="step" data-step="4">
+        <h2>4. ¿Qué tanto invierte?</h2>
+        <label>¿Te ha dicho que le gustas o te quiere?
+          <select name="leGustas">
+            <option value="si" data-score="2">Sí</option>
+            <option value="no" data-score="-2">No</option>
+            <option value="indirecto" data-score="1">Indirectamente</option>
+          </select>
+        </label>
+        <label>¿Te busca cuando necesita apoyo o algo emocional?
+          <select name="apoyo">
+            <option value="si" data-score="1">Sí</option>
+            <option value="no" data-score="0">No</option>
+            <option value="aVeces" data-score="0">A veces</option>
+          </select>
+        </label>
+        <label>¿Ella muestra celos si hablas de otras mujeres?
+          <select name="celos">
+            <option value="si" data-score="1">Sí</option>
+            <option value="no" data-score="0">No</option>
+            <option value="nose" data-score="0">No sé</option>
+          </select>
+        </label>
+        <button type="button" class="next">Siguiente ➡️</button>
+      </section>
+      <!-- 5 Contacto físico -->
+      <section class="step" data-step="5">
+        <h2>5. La parte física</h2>
+        <label>¿Han tenido contacto físico?
+          <select name="contactoFisico">
+            <option value="si" data-score="2">Sí</option>
+            <option value="no" data-score="0">No</option>
+            <option value="tension" data-score="1">No pero con tensión</option>
+          </select>
+        </label>
+        <label>¿Quién inicia el contacto físico?
+          <select name="iniciaFisico">
+            <option value="yo" data-score="0">Yo</option>
+            <option value="ella" data-score="1">Ella</option>
+            <option value="ambos" data-score="1">Ambos</option>
+            <option value="nadie" data-score="-1">Nadie</option>
+          </select>
+        </label>
+        <label>¿Cómo es su actitud durante el contacto?
+          <select name="actitudFisico">
+            <option value="distante" data-score="-1">Distante</option>
+            <option value="cariñosa" data-score="1">Cariñosa</option>
+            <option value="apasionada" data-score="2">Apasionada</option>
+            <option value="fria" data-score="-2">Fría</option>
+          </select>
+        </label>
+        <button type="button" class="next">Siguiente ➡️</button>
+      </section>
+      <!-- 6 Regalos e inversiones -->
+      <section class="step" data-step="6">
+        <h2>6. ¿Has invertido?</h2>
+        <label>¿Le has dado regalos?
+          <select name="regalos">
+            <option value="si" data-score="0">Sí</option>
+            <option value="no" data-score="0">No</option>
+            <option value="peque">Solo pequeños detalles</option>
+          </select>
+        </label>
+        <label>¿Ella te ha dado algo a ti?
+          <select name="ellaRegalos">
+            <option value="si" data-score="1">Sí</option>
+            <option value="no" data-score="-1">No</option>
+            <option value="peque" data-score="0">Algo pequeño</option>
+          </select>
+        </label>
+        <label>¿Ella te ha pedido explícitamente algo?
+          <select name="ellaPide">
+            <option value="si" data-score="-1">Sí</option>
+            <option value="no" data-score="1">No</option>
+            <option value="indirecto" data-score="-1">Indirectamente</option>
+          </select>
+        </label>
+        <button type="button" class="next">Siguiente ➡️</button>
+      </section>
+      <!-- 7 Marco emocional -->
+      <section class="step" data-step="7">
+        <h2>7. ¿Qué sientes tú?</h2>
+        <label>¿Te sientes ansioso si no responde?
+          <select name="ansioso">
+            <option value="si" data-score="-1">Sí</option>
+            <option value="no" data-score="1">No</option>
+            <option value="aveces" data-score="0">A veces</option>
+          </select>
+        </label>
+        <label>¿Sientes que te quita energía?
+          <select name="quitaEnergia">
+            <option value="si" data-score="-1">Sí</option>
+            <option value="no" data-score="1">No</option>
+            <option value="nose" data-score="0">No sé</option>
+          </select>
+        </label>
+        <label>¿Te cuesta ponerle límites?
+          <select name="limites">
+            <option value="si" data-score="-1">Sí</option>
+            <option value="no" data-score="1">No</option>
+            <option value="aprendiendo" data-score="0">Estoy aprendiendo</option>
+          </select>
+        </label>
+        <button type="button" class="next">Siguiente ➡️</button>
+      </section>
+      <!-- 8 Propósito final -->
+      <section class="step" data-step="8">
+        <h2>8. ¿Qué buscas?</h2>
+        <label>¿Qué quieres con ella?
+          <select name="proposito">
+            <option value="serio" data-score="2">Serio</option>
+            <option value="casual" data-score="1">Casual</option>
+            <option value="nose" data-score="0">No sé</option>
+            <option value="amistad" data-score="0">Solo amistad</option>
+          </select>
+        </label>
+        <label>¿Crees que ella está en la misma sintonía?
+          <select name="mismaSintonia">
+            <option value="si" data-score="2">Sí</option>
+            <option value="no" data-score="-1">No</option>
+            <option value="nose" data-score="0">No sé</option>
+          </select>
+        </label>
+        <label>¿Tienes otras opciones o estás solo enfocado en ella?
+          <select name="otrasOpciones">
+            <option value="si" data-score="1">Sí</option>
+            <option value="no" data-score="-1">No</option>
+            <option value="abierto" data-score="0">Estoy abierto</option>
+          </select>
+        </label>
+        <button type="button" class="next">Finalizar ✅</button>
+      </section>
+      <!-- 9 Resultado -->
+      <section class="step" data-step="9">
+        <h2>La radiografía final</h2>
+        <p id="resultado"></p>
+        <button type="submit">Guardar</button>
+      </section>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
